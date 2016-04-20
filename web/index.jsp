@@ -14,6 +14,6 @@
     <body>
         <h1>Customers</h1>
         
-        <a id="read" href="read.jsp"> View All Customers </a>
+        <a id="read" href="read"> View All Customers </a>
     </body>
 </html>
