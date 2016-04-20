@@ -133,6 +133,11 @@ public class ReadQuery {
                 table += CUSTOMERS.getEMAILADDR();
                 table += "</td>";
      
+                table += "<td>";
+                table += "<a href=update?CUSTID=" + CUSTOMERS.getCUSTID() + "> Update </a>" + "<a href=delete?CUSTID=" + CUSTOMERS.getCUSTID() + ">Delete </a>";
+                table += "</td>"; 
+                
+                
                 
                 
                 table += "</tr>";
