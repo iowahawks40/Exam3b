@@ -9,13 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add a New Super Bowl</title>
+        <title>Add a Customer</title>
     </head>
     <link rel="stylesheet" href="style.css" type="text/css">
     <body>
         
+         <div class="wrap">
+
+            <%@ include file="includes/header.jsp" %>
+
+            <%@ include file="includes/menu.jsp" %>
+            
+         <div class="main">   
+            
         
-        <h1>Add a New Super Bowl</h1>
+        <h1>Add a New Customer</h1>
         
         <form name="addForm" action="addCustomer" method="get">
               
@@ -49,7 +57,8 @@
         
          </div>
 
-
+            <%@ include file="includes/footer.jsp" %>
+            
         </div>
             
     </body>
