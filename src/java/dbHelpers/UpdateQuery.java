@@ -63,6 +63,7 @@ public class UpdateQuery {
             ps.setString(6, CUSTOMERS.getSTATE());
             ps.setString(7, CUSTOMERS.getZIP());
             ps.setString(8, CUSTOMERS.getEMAILADDR());
+            ps.setInt(9, CUSTOMERS.getCUSTID());
             
             ps.executeUpdate();
         } catch (SQLException ex) {

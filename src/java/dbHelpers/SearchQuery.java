@@ -50,13 +50,14 @@ public class SearchQuery {
         
     }
     
-    public void doSearch (String FIRSTNAME){
+    public void doSearch (String NAME){
         
         try {
-            String query = "SELECT * FROM CUSTOMERS WHERE UPPER (FIRSTNAME) LIKE ? ORDER BY CUSTID";
+            String query = "SELECT * FROM CUSTOMERS WHERE UPPER (FIRSTNAME) LIKE ? OR UPPER (LASTNAME) LIKE ? ORDER BY CUSTID";
             
             PreparedStatement ps = conn.prepareStatement(query);
-            ps.setString(1, "%" + FIRSTNAME.toUpperCase() + "%");
+            ps.setString(1, "%" + NAME.toUpperCase() + "%");
+            ps.setString(2, "%" + NAME.toUpperCase() + "%");
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,6 +70,47 @@ public class SearchQuery {
         String table = "";
         
         table += "<table border=1>";
+        
+        table += "<th>";
+        table += "CUSTID";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "FIRSTNAME";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "LASTNAME";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "ADDR1";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "ADDR2";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "CITY";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "STATE";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "ZIP";
+        table += "</th>";
+        
+        table += "<th>";
+        table += "EMAILADDR";
+        table += "</th>";
+        
+         table += "<th>";
+        table += "Update & Delete";
+        table += "</th>";
+        
         
         try {
             while(this.results.next()){
